@@ -1,0 +1,81 @@
+.ceo-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.ceo-message h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #343a40;
+}
+.ceo-message p {
+  font-size: 16px;
+  color: #6c757d;
+  margin-bottom: 20px;
+}
+.ceo-message img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+.ceo-message .message {
+  max-width: 600px;
+  text-align: center;
+  font-size: 16px;
+  color: #495057;
+  line-height: 1.5;
+}
+.ceo-message .signature {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #343a40;
+}
+@media (max-width: 768px) {
+  .ceo-message {
+    padding: 15px;
+  }
+  .ceo-message h2 {
+    font-size: 20px;
+  }
+  .ceo-message p {
+    font-size: 14px;
+  }
+  .ceo-message img {
+    width: 80px;
+    height: 80px;
+  }
+  .ceo-message .message {
+    font-size: 14px;
+  }
+  .ceo-message .signature {
+    font-size: 16px;
+  }
+}
+/* Responsive adjustments for smaller screens */
+@media (max-width: 480px) {
+  .ceo-message {
+    padding: 10px;
+  }
+  .ceo-message h2 {             
+    font-size: 18px;
+  }
+  .ceo-message p {
+    font-size: 12px;
+  }     
+    .ceo-message img {
+        width: 60px;
+        height: 60px;
+    }
+    .ceo-message .message {
+        font-size: 12px;
+    }
+    .ceo-message .signature {
+        font-size: 14px;
+    }
+}

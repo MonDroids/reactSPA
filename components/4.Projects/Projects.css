@@ -1,0 +1,114 @@
+.projects{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.projects h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+.projects p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+}
+.projects .project-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+.projects .project-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    width: 300px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.projects .project-item h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #333;
+}
+.projects .project-item p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+}
+.projects .project-item a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: 500;
+}
+.projects .project-item a:hover {
+    color: #0056b3;
+}
+.projects .project-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+.projects img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+.projects a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: 500;
+}
+.projects a:hover {
+    color: #0056b3;
+}
+
+@media (max-width: 768px) {
+    .projects {
+        padding: 10px;
+    }
+    .projects h2 {
+        font-size: 20px;
+    }
+    .projects p {
+        font-size: 14px;
+    }
+    .projects .project-list {
+        flex-direction: column;
+        align-items: center;
+    }
+    .projects .project-item {
+        width: 100%;
+        max-width: 400px;
+    }
+    .projects .project-item h3 {
+        font-size: 18px;    
+    
+}
+    }
+    .projects .project-item p {
+        font-size: 12px;
+    }
+
+    .projects .project-item a {
+        font-size: 14px;
+    }
+    .projects img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+} 
+.projects a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: 500;
+}
+.projects a:hover {
+    color: #0056b3;
+}

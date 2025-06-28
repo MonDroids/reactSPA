@@ -16,11 +16,15 @@ const Header = () => {
     };
     return (
         <header className="header">
-            <div className="header_container">
-                <div className="header_logo">
-                    <a href="#home">MyWebsite</a>
-                </div>
-                <nav className={`header_nav ${ismenuOpen ? "open" : ""}`}>
+            <div className="header_left">
+                <a href="#home" className="logo">
+                    <img src="/src/assets/images/logo.png" alt="Logo" className="header_logo" /></a>
+                    <button className="burger_menu" onClick={toggleMenu}>
+                        {ismenuOpen ? "Close" : "Menu"}
+                    </button>
+            </div>
+            <div className="header_right">
+            <nav className={`header_nav ${ismenuOpen ? "open" : ""}`}>
                     <ul>
                         <li><a href="#home" onClick={() => hadleScroll("home")}>Home</a></li>
                         <li><a href="#about" onClick={() => hadleScroll("about")}>About</a></li>
@@ -32,6 +36,7 @@ const Header = () => {
                 <button className="header_menu_toggle" onClick={toggleMenu}>
                     {ismenuOpen ? "Close Menu" : "Open Menu"}
                 </button>
+            
             </div>
         </header>
     );

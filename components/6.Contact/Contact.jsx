@@ -1,27 +1,70 @@
+import emailjs from "emailjs-com";
+import { useRef, useState } from "react";
+import { FaEnvelope, FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
 import "./Contact.css";
 
 const Contact = () => {
+    const form = useRef();
+    const [status, setStatus] = useState("");
+
+    const sendEmail = (e) => {
+        e.preventDefault();
+
+        emailjs.sendForm('service_id', 'template_id', form.current, 'user_id')
+            .then((result) => {
+                console.log(result.text);
+                setStatus("Message sent successfully!");
+                form.current.reset();
+            }, (error) => {
+                console.log(error.text);
+                setStatus("Failed to send message. Please try again.");
+            });
+    };
+
     return (
-        <section className="contact">
-            <div className="contact_content">
+        <section className="contact" id="contact">
+            <div className="contact-container">
+                <form ref={form} className="contact-form" onSubmit={sendEmail}>
                 <h2 className="contact_title">Contact Us</h2>
-                <h3 className="contact_subtitle">Get in Touch</h3>
-                <p className="contact_description">
-                    We would love to hear from you! Whether you have a question, feedback, or just want to say hello, feel free to reach out to us.
-                </p>
-                <form className="contact_form">
-                    <label className="contact_label">Your Name</label>
-                    <input type="text" id="name" name="name" placeholder="Your Name" required />
-                    <label className="contact_label">Your Email</label>
-                    <input type="email" id="email" name="email" placeholder="Your Email" required />
-                    <label className="contact_label">Your Message</label>
-                    <textarea placeholder="Your Message" required></textarea>
-                    <button type="submit" className="contact_button">Send Message</button>
-                </form>
+            <p className="contact_description">
+                If you have any questions or feedback, please fill out the form below.
+            </p>
+            <form ref={form} onSubmit={sendEmail} className="contact_form">
+                <label htmlFor="name" className="contact_label">Name</label>
+                <input type="text" name="name" required className="contact_input" />
+                
+                <label htmlFor="email" className="contact_label">Email</label>
+                <input type="email" name="email" required className="contact_input" />
+                
+                <label htmlFor="message" className="contact_label">Message</label>
+                <textarea name="message" required className="contact_textarea"></textarea>
+                
+                <button type="submit" className="submit-button">Send Message</button>
+            </form>
+            {status && <p className="contact_status">{status}</p>}
+            <div className="contact_info">
+                <h3 className="contact_info_title">Company Information</h3>
+                <div className="contact_item">
+                    <FaMapMarkerAlt />
+                    <span>123 Main St, Anytown, USA</span>
+                </div>
+                <div className="contact_item">
+                    <FaPhoneAlt />
+                    <span>(123) 456-7890</span>
+                </div>
+                <div className="contact_item">
+                    <FaEnvelope />
+                    <span>
+                        contact@pulldash.com
+                    </span>
+                </div>
+            </div>
+            </form>
             </div>
         </section>
     );
-}
+};
+
 export default Contact;
 // This code defines a Contact component that renders a contact form with fields for name, email, and message.
 // The form includes labels for each field, and a submit button to send the message.
